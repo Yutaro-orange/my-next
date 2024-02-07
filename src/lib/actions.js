@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 import prisma from "./prisma";
-import { getBooksById } from "./getter";}
+import { getBooksById } from "./getter";
 
 //フォームからの入力値をデータベースに登録
 export async function addReview(data){
@@ -34,7 +34,7 @@ export async function addReview(data){
 export async function removereview(data){
     await prisma.reviews.delete({
         where: {
-            id: data.get('id')
+            id: data
         }
     });
     //処理成功後はトップページにリダイレクト
